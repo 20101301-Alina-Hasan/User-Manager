@@ -1,24 +1,11 @@
-# README
+# Itransition Training | TASK04
+Public Repository for Training under Itransition 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ **Name:** Alina Hasan
+ 
+ **Group:** Ruby | **Language: *EN***
 
-Things you may want to cover:
+**TASK04** 
+Video Demonstration: *To be linked*
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+*Completed using Ruby on Rails*
