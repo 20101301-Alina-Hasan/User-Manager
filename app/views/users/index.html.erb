@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Management</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <!-- Toolbar with actions -->
+                <div class="toolbar">
+                    <%= form_with url: bulk_update_users_path, method: :patch, id: :bulk_update_form do |form| %>
+                        <!-- Block button -->
+                        <%= submit_tag "Block", form: :bulk_update_form, class: "btn btn-secondary" %>
+
+                        <!-- Unblock button -->
+                        <%= submit_tag "Unblock", form: :bulk_update_form, class: "btn btn-success" %>
+
+                        <!-- Delete button -->
+                        <%= submit_tag "Delete", form: :bulk_update_form, class: "btn btn-danger" %>
+                    <% end %>
+                </div>
+            </div>
+            <div class="col-md-3 d-flex align-items-center justify-content-end">
+                <!-- Logged-in message and logout button -->
+                <div class="logged-in-message mr-3">
+                    <% if Current.user %>
+                        Logged in as <%= Current.user.name %>
+                    <% end %>
+                </div>
+                <div>
+                    <% if Current.user %>
+                        <%= button_to "Logout", logout_path, method: :delete, class: "logout-button" %>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col"><%= check_box_tag "select_all", nil, false, id: "select_all_checkbox" %></th>
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Registration Time</th>
+                        <th scope="col">Last Login</th>
+                        <th scope="col">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% @users.each do |user| %>
+                        <tr>
+                            <!-- Checkboxes for each user -->
+                            <td><%= check_box_tag "user_ids[]", user.id, nil, form: 'bulk_update_form' %></td>
+                            <td><%= user.id %></td>
+                            <td><%= user.name %></td>
+                            <td><%= user.email %></td>
+                            <td><%= user.created_at %></td>
+                            <td><%= user.updated_at %></td>
+                            <td><%= user.status ? 'Active' : 'Blocked' %></td>
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>
+        </div>
+        <!-- Pagination links -->
+        <%= will_paginate @users, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+    </div>
+    <%= javascript_include_tag 'checkbox_select_all' %>
+</body>
+</html>

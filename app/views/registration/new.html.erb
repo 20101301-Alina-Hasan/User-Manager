@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!---Custom CSS File--->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <input type="checkbox" id="check">
+    <div class="signup form">
+      <header>Signup</header>
+      <%= form_with(model: @user, url: signup_path) do |form| %>
+        <% if @user.errors.any? %>
+          <div class="alert alert-danger">
+          <% @user.errors.full_messages.each_with_index do |message, index| %>
+            <div><%= index + 1 %>. <%= message %></div> 
+          <% end %>
+          </div>
+        <% end %>
+        <%= form.text_field :name, placeholder: "Enter your name" %>
+        <%= form.email_field :email, placeholder: "Enter your email" %>
+        <%= form.password_field :password, placeholder: "Create a password"%>
+        <%= form.password_field :password_confirmation, placeholder: "Confirm your password" %>
+        <%= form.submit "Get Started", class: "button" %>
+      <% end %>
+      <div class="signup">
+        <span class="signup">Already have an account?
+          <a href="/login">Login</a> 
+        </span>
+      </div>
+    </div>
+  </div>
+  
+            
+  
+
+  
+
+</body>
+</html>
+
+

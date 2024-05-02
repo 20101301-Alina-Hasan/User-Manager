@@ -1,0 +1,178 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ /* Import Google font - Poppins */
+
+@import "bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+  background-color: whitesmoke !important;
+}
+.container{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  max-width: 430px;
+  width: 100%;
+  background: #fff;
+  border-radius: 7px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+}
+.container .registration{
+  display: none;
+}
+#check:checked ~ .registration{
+  display: block;
+}
+#check:checked ~ .login{
+  display: none;
+}
+#check{
+  display: none;
+}
+.container .form{
+  padding: 2rem;
+}
+.form header{
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+ .form input{
+   height: 60px;
+   width: 100%;
+   padding: 0 15px;
+   font-size: 17px;
+   margin-bottom: 1.3rem;
+   border: 1px solid #ddd;
+   border-radius: 6px;
+   outline: none;
+ }
+ .form input:focus{
+   box-shadow: 0 1px 0 rgba(0,0,0,0.2);
+ }
+.form a{
+  font-size: 16px;
+  color: #009579;
+  text-decoration: none;
+}
+.form a:hover{
+  text-decoration: underline;
+}
+.form input.button{
+  color: #fff;
+  background: #01715d;
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-top: 1.7rem;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.form input.button:hover{
+  background: #015c4b;
+}
+.signup{
+  font-size: 17px;
+  text-align: center;
+}
+.signup label{
+  color: #009579;
+  cursor: pointer;
+}
+.signup label:hover{
+  text-decoration: underline;
+}
+
+.alert {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.notice {
+  background-color: #4CAF50; 
+  color: white;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+.logged-in-message {
+  color: #009579;
+  white-space: nowrap; /* Prevent line breaks */
+  // overflow: hidden; /* Hide overflow text */
+  // text-overflow: ellipsis; /* Display ellipsis (...) for overflow text */
+}
+
+
+.logout-button {
+  background-color: #01715d;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+
+.logout-button:hover {
+  background-color: #015c4b; 
+}
+
+.toolbar {
+  margin-bottom: 20px; /* Add margin below the buttons */
+  padding-top: 20px;
+}
+
+.pagination {
+  justify-content: center;
+}
+.pagination .page-link {
+  color: black; 
+  background-color: #ffffff;
+  border-color: #009579; 
+  
+}
+.pagination .page-link:hover {
+  color: #ffffff; 
+  background-color: #01715d; 
+  border-color: #01715d;
+}
+
+.pagination .page-item.active .page-link {
+  color: #ffffff; 
+  background-color: #01715d; 
+  border-color: #01715d;
+}
+
+th {
+  font-weight: 625 !important;
+}

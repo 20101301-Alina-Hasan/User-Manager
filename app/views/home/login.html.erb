@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!---Custom CSS File--->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <input type="checkbox" id="check">
+    <div class="login form">
+      <header>Login</header>
+      <%= form_with(url: login_path) do |form| %>
+        <%= form.email_field :email, placeholder: "Enter your email" %>
+        <%= form.password_field :password, placeholder: "Create a password" %>
+        <%= form.submit "Login", class: "button" %>
+      <% end %>
+      <div class="signup">
+        <span class="signup">Don't have an account?
+        <a href="/signup">Sign up</a>
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

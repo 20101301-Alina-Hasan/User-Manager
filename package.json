@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "@hotwired/stimulus": "^3.2.2",
+    "@rails/webpacker": "5.4.4",
+    "@stimulus-components/checkbox-select-all": "^6.0.0",
+    "@stimulus-components/password-visibility": "^3.0.0",
+    "stimulus-password-visibility": "^2.1.1",
+    "webpack": "^4.46.0",
+    "webpack-cli": "^3.3.12"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^3"
+  }
+}
