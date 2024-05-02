@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
                 flash[:notice] = "Welcome back, #{@user.name}"
                 redirect_to users_path
               else
-                flash[:alert] = "Your account has been blocked."
+                flash[:alert] = "Your account has been blocked. Please contact the UserManager administrator."
                 redirect_to login_path
               end
         else
