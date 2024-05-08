@@ -14,7 +14,7 @@
       <header>Login</header>
       <%= form_with(url: login_path) do |form| %>
         <%= form.email_field :email, placeholder: "Enter your email" %>
-        <%= form.password_field :password, placeholder: "Create a password" %>
+        <%= form.password_field :password, placeholder: "Enter password" %>
         <%= form.submit "Login", class: "button" %>
       <% end %>
       <div class="signup">
