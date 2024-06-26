@@ -1,12 +1,3 @@
-# Itransition Training | TASK04
-Public Repository for Training under Itransition 
-
- **Group:** Ruby | **Language: *EN***
-
- **Name:** Alina Hasan
-
-### Task #4
-
 **Video Demonstration:**
 
 * YouTube: https://youtu.be/1-i5oDiReZo 
